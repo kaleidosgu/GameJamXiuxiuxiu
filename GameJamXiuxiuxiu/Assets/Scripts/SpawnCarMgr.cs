@@ -23,9 +23,11 @@ public class SpawnCarMgr : MonoBehaviour
             DebugTest = false;
             int nRandom = Random.Range(0, 4);
             SpawnPosition _pos = ArraySpawnPos[nRandom];
-            GameObject _objCar = Instantiate(PrefabCar, _pos.transform.position, Quaternion.identity);
+            GameObject _objCar = Instantiate(PrefabCar, Vector3.zero, Quaternion.identity);
+            _objCar.transform.SetParent(_pos.transform);
+            _objCar.transform.localPosition = Vector3.zero;
             CarMovement _carMovement = _objCar.GetComponent<CarMovement>();
-            _carMovement.SetStartData(_pos.MoveDir);
+            _carMovement.SetStartData(_pos.MoveDir, _pos.Dir);
         }
     }
 }

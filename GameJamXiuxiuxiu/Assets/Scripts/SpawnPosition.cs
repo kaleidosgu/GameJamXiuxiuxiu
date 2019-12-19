@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnPosition : MonoBehaviour
 {
     public Vector3 MoveDir;
+    public GlobalDefine.CarMovementDir Dir;
     // Start is called before the first frame update
     void Start()
     {

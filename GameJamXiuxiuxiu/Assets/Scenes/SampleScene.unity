@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDir: {x: -1, y: 0, z: 0}
+  Dir: 3
 --- !u!1 &393564840
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513566626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6, y: 0, z: -16.8}
+  m_LocalPosition: {x: 4.2, y: 0, z: -15.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 393564841}
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDir: {x: 0, y: 0, z: 1}
+  Dir: 2
 --- !u!1 &664813301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDir: {x: 1, y: 0, z: 0}
+  Dir: 4
 --- !u!1 &1174619248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveDir: {x: 0, y: 0, z: -1}
+  Dir: 1
 --- !u!1 &1821374128
 GameObject:
   m_ObjectHideFlags: 0
