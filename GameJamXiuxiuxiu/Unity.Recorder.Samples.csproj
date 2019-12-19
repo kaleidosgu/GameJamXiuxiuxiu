@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{067B487D-7133-028F-0138-1744CB61FBC0}</ProjectGuid>
+    <ProjectGuid>{DEF8B363-7D07-5E3E-4738-9DD9D6AC0F32}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Recorder.Samples</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -63,44 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CarMovement.cs" />
-    <Compile Include="Assets\Scripts\GlobalDefine.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\SoundSpeaker.cs" />
-    <Compile Include="Assets\Scripts\SpawnCarMgr.cs" />
-    <Compile Include="Assets\Scripts\SpawnPosition.cs" />
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
+    <Compile Include="Assets\Unity Recorder\Samples\Editor\RecorderEditorExample.cs" />
+    <Compile Include="Assets\Unity Recorder\Samples\RecorderExample.cs" />
+    <None Include="Assets\Unity Recorder\Samples\Unity.Recorder.Samples.asmdef" />
     <Reference Include="UnityEditor.UI">
       <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>G:/Tools/Unity_2019_26/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -278,6 +248,21 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>G:/Tools/Unity_2019_26/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>G:/Tools/Unity_2019_26/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>G:/Tools/Unity_2019_26/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>G:/Tools/Unity_2019_26/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>G:/Tools/Unity_2019_26/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>G:/Tools/Unity_2019_26/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -624,6 +609,12 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>G:/Tools/Unity_2019_26/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{657B9E1A-7D12-CFA6-77CB-5BBDFDC5C0CF}</Project>
+      <Name>Unity.Recorder.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

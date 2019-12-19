@@ -20,11 +20,13 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCodeRight) == true)
         {
-            transform.Rotate(0, 90, 0);
+            transform.Rotate(0, -90, 0);
+            m_speaker.PlayClip();
         }
         else if (Input.GetKeyDown(KeyCodeLeft) == true)
         {
-            transform.Rotate(0, -90, 0);
+            transform.Rotate(0, 90, 0);
+            m_speaker.PlayClip();
         }
         else if( Input.GetKeyDown(KeycodeCommand) == true)
         {

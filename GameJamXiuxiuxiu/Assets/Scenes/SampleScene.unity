@@ -587,8 +587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2095fde4f84023b48bf4173c3ef12df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyCodeRight: 275
-  KeyCodeLeft: 276
+  KeyCodeRight: 97
+  KeyCodeLeft: 100
   KeycodeCommand: 32
 --- !u!82 &818173009
 AudioSource:
