@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode KeyCodeLeft;
     public KeyCode KeycodeCommand;
     public RequestCommandMgr requestMgr;
+
+    private GlobalDefine.PlayerDir m_playerDir;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +20,20 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCodeRight) == true)
         {
-            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Right));
-            //transform.Rotate(0, -90, 0);
+            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Right,this));
         }
         else if (Input.GetKeyDown(KeyCodeLeft) == true)
         {
-            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Left));
-            //transform.Rotate(0, 90, 0);
+            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Left, this));
         }
         else if( Input.GetKeyDown(KeycodeCommand) == true)
         {
-            //m_speaker.PlayClip();
+            //requestMgr.AddCommand(new RequestChangeSpeed(GlobalDefine.CarMovementDir.)
         }
+    }
+
+    public void SetPlayerDir(GlobalDefine.PlayerDir _dir)
+    {
+        m_playerDir = _dir;
     }
 }

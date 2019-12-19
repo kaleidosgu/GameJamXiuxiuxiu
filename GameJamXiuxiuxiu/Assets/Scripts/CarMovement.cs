@@ -6,17 +6,24 @@ public class CarMovement : MonoBehaviour
 {
     public float NormalSpeed;
 
-    private Vector3 m_vecDir;
+    public float PowerSpeed;
+
+    public float TimeOfPowerSpeed;
+
+    private float m_fCurTime;
+
+    private bool m_bPower;
+
+    private float m_fCurSpeed;
     private GlobalDefine.CarMovementDir m_dir;
     // Start is called before the first frame update
     void Start()
     {
-        //m_vecDir = Vector3.left;
+        m_fCurSpeed = NormalSpeed;
     }
     public void SetStartData(Vector3 vecPos,GlobalDefine.CarMovementDir _dir)
     {
         m_dir = _dir;
-        m_vecDir = vecPos;
 
         if( _dir == GlobalDefine.CarMovementDir.CarMovementDir_East )
         {
@@ -35,24 +42,45 @@ public class CarMovement : MonoBehaviour
             transform.Rotate(0, 0, 0);
         }
     }
+    public void SetPowerSpeed(bool bPower, GlobalDefine.CarMovementDir _carDir)
+    {
+        if(m_dir == _carDir)
+        {
+            m_bPower = bPower;
+            m_fCurSpeed = PowerSpeed;
+        }
+    }
 
     private void FixedUpdate()
     {
+        if(m_bPower == true)
+        {
+            m_fCurTime += Time.fixedDeltaTime;
+            if( m_fCurTime >= TimeOfPowerSpeed )
+            {
+                m_bPower = false;
+                m_fCurSpeed = NormalSpeed;
+            }
+        }
+        else
+        {
+
+        }
         if(m_dir == GlobalDefine.CarMovementDir.CarMovementDir_West)
         {
-            transform.Translate(transform.right * Time.fixedDeltaTime * NormalSpeed);
+            transform.Translate(transform.right * Time.fixedDeltaTime * m_fCurSpeed);
         }
         else if (m_dir == GlobalDefine.CarMovementDir.CarMovementDir_East)
         {
-            transform.Translate(-transform.right * Time.fixedDeltaTime * NormalSpeed);
+            transform.Translate(-transform.right * Time.fixedDeltaTime * m_fCurSpeed);
         }
         else if (m_dir == GlobalDefine.CarMovementDir.CarMovementDir_North)
         {
-            transform.Translate(transform.forward * Time.fixedDeltaTime * NormalSpeed);
+            transform.Translate(transform.forward * Time.fixedDeltaTime * m_fCurSpeed);
         }
         else if (m_dir == GlobalDefine.CarMovementDir.CarMovementDir_South)
         {
-            transform.Translate(-transform.forward * Time.fixedDeltaTime * NormalSpeed);
+            transform.Translate(-transform.forward * Time.fixedDeltaTime * m_fCurSpeed);
         }
     }
 }

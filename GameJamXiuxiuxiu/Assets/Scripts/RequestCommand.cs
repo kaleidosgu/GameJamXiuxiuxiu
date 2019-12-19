@@ -26,10 +26,12 @@ public class RequestCommand
 public class RequestChangePlayerDir : RequestCommand
 {
     private GlobalDefine.PlayerDir m_playerDir;
-    public RequestChangePlayerDir(GlobalDefine.PlayerDir _dir)
+    private PlayerController m_ctrl;
+    public RequestChangePlayerDir(GlobalDefine.PlayerDir _dir, PlayerController _ctrl)
     {
         m_Typ = RequestCommand_Type.RequestCommand_Type_ChangePlayerDir;
         m_playerDir = _dir;
+        m_ctrl = _ctrl;
     }
     public GlobalDefine.PlayerDir GetPlayerDir()
     {
@@ -64,5 +66,6 @@ public class RequestChangeSpeed: RequestCommand
     {
         return m_dir;
     }
+
 }
 
