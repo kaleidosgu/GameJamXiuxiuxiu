@@ -7,12 +7,10 @@ public class PlayerController : MonoBehaviour
     public KeyCode KeyCodeRight;
     public KeyCode KeyCodeLeft;
     public KeyCode KeycodeCommand;
-
-    private SoundSpeaker m_speaker;
+    public RequestCommandMgr requestMgr;
     // Start is called before the first frame update
     void Start()
     {
-        m_speaker = GetComponent<SoundSpeaker>();
     }
 
     // Update is called once per frame
@@ -20,17 +18,17 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCodeRight) == true)
         {
-            transform.Rotate(0, -90, 0);
-            m_speaker.PlayClip();
+            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Right));
+            //transform.Rotate(0, -90, 0);
         }
         else if (Input.GetKeyDown(KeyCodeLeft) == true)
         {
-            transform.Rotate(0, 90, 0);
-            m_speaker.PlayClip();
+            requestMgr.AddCommand(new RequestChangePlayerDir(GlobalDefine.PlayerDir.PlayerDir_Left));
+            //transform.Rotate(0, 90, 0);
         }
         else if( Input.GetKeyDown(KeycodeCommand) == true)
         {
-            m_speaker.PlayClip();
+            //m_speaker.PlayClip();
         }
     }
 }

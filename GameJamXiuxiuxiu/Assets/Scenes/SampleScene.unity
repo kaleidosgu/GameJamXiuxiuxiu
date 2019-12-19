@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724d908ecf922ce45806cac4633176d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabCar: {fileID: 3950521698252636864, guid: cb658a9f00cdb214ba659df0ad435a79,
+  PrefabCar: {fileID: 4967549121337645700, guid: df330b948e4bb8c46b8614f566543480,
     type: 3}
   ArraySpawnPos:
   - {fileID: 1763068541}
@@ -590,6 +590,7 @@ MonoBehaviour:
   KeyCodeRight: 97
   KeyCodeLeft: 100
   KeycodeCommand: 32
+  requestMgr: {fileID: 1726886820}
 --- !u!82 &818173009
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1471,6 +1472,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612119579}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1726886819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1726886821}
+  - component: {fileID: 1726886820}
+  m_Layer: 0
+  m_Name: CommandMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1726886820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726886819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a89a1657986484393cb9226b18176e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToExecute: 0.2
+  PlayerTrans: {fileID: 818173007}
+  SndSpeaker: {fileID: 818173010}
+--- !u!4 &1726886821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726886819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.52669793, y: 11.641844, z: 2.28707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1759138772
 GameObject:
   m_ObjectHideFlags: 0

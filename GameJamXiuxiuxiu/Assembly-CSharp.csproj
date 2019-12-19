@@ -66,6 +66,9 @@
     <Compile Include="Assets\Scripts\CarMovement.cs" />
     <Compile Include="Assets\Scripts\GlobalDefine.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\RequestCommand.cs" />
+    <Compile Include="Assets\Scripts\RequestCommandMgr.cs" />
+    <Compile Include="Assets\Scripts\RhythmController.cs" />
     <Compile Include="Assets\Scripts\SoundSpeaker.cs" />
     <Compile Include="Assets\Scripts\SpawnCarMgr.cs" />
     <Compile Include="Assets\Scripts\SpawnPosition.cs" />

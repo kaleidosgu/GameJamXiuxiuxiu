@@ -1,0 +1,68 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RequestCommand 
+{
+    public enum RequestCommand_Type
+    {
+        RequestCommand_Type_ChangeNone = 0,
+        RequestCommand_Type_ChangePlayerDir = 1,
+        RequestCommand_Type_ChangeSpeed = 2,
+    }
+    protected RequestCommand_Type m_Typ;
+    public RequestCommand()
+    {
+
+    }
+
+    public RequestCommand_Type GetCmdTyp()
+    {
+        return m_Typ;
+    }
+
+}
+
+public class RequestChangePlayerDir : RequestCommand
+{
+    private GlobalDefine.PlayerDir m_playerDir;
+    public RequestChangePlayerDir(GlobalDefine.PlayerDir _dir)
+    {
+        m_Typ = RequestCommand_Type.RequestCommand_Type_ChangePlayerDir;
+        m_playerDir = _dir;
+    }
+    public GlobalDefine.PlayerDir GetPlayerDir()
+    {
+        return m_playerDir;
+    }
+    public void ExecuteCmd(Transform TransPlayer)
+    {
+        if (m_playerDir == GlobalDefine.PlayerDir.PlayerDir_Right)
+        {
+            TransPlayer.Rotate(0, -90, 0);
+        }
+        else if (m_playerDir == GlobalDefine.PlayerDir.PlayerDir_Left)
+        {
+            TransPlayer.Rotate(0, 90, 0);
+        }
+        else
+        {
+            Debug.Assert(false);
+        }
+    }
+}
+
+public class RequestChangeSpeed: RequestCommand
+{
+    private GlobalDefine.CarMovementDir m_dir;
+    public RequestChangeSpeed(GlobalDefine.CarMovementDir _dir)
+    {
+        m_Typ = RequestCommand_Type.RequestCommand_Type_ChangeSpeed;
+        m_dir = _dir;
+    }
+    public GlobalDefine.CarMovementDir GetCarDir()
+    {
+        return m_dir;
+    }
+}
+
