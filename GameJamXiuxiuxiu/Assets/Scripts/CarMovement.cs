@@ -42,12 +42,13 @@ public class CarMovement : MonoBehaviour
             transform.Rotate(0, 0, 0);
         }
     }
-    public void SetPowerSpeed(bool bPower, GlobalDefine.CarMovementDir _carDir)
+    public void SetPowerSpeed( GlobalDefine.CarMovementDir _carDir)
     {
         if(m_dir == _carDir)
         {
-            m_bPower = bPower;
+            m_bPower = true;
             m_fCurSpeed = PowerSpeed;
+            m_fCurTime = 0.0f;
         }
     }
 

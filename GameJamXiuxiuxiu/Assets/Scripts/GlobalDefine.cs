@@ -16,6 +16,6 @@ public class GlobalDefine
     public enum PlayerDir
     {
         PlayerDir_Right = 1,
-        PlayerDir_Left = 1,
+        PlayerDir_Left = 2,
     }
 }

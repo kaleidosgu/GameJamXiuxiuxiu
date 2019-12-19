@@ -39,18 +39,7 @@ public class RequestChangePlayerDir : RequestCommand
     }
     public void ExecuteCmd(Transform TransPlayer)
     {
-        if (m_playerDir == GlobalDefine.PlayerDir.PlayerDir_Right)
-        {
-            TransPlayer.Rotate(0, -90, 0);
-        }
-        else if (m_playerDir == GlobalDefine.PlayerDir.PlayerDir_Left)
-        {
-            TransPlayer.Rotate(0, 90, 0);
-        }
-        else
-        {
-            Debug.Assert(false);
-        }
+        m_ctrl.SetPlayerDir(m_playerDir);
     }
 }
 

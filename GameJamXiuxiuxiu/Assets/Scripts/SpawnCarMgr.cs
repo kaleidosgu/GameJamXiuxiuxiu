@@ -10,6 +10,8 @@ public class SpawnCarMgr : MonoBehaviour
 
     public float SpawnCarTime;
 
+    public ChangeSpeedMgr chgSpeedMgr;
+
     public bool DebugTest;
     private float m_fCurSpawnCarTime;
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class SpawnCarMgr : MonoBehaviour
         _objCar.transform.SetParent(_pos.transform);
         _objCar.transform.localPosition = Vector3.zero;
         CarMovement _carMovement = _objCar.GetComponent<CarMovement>();
+        chgSpeedMgr.RegisteCar(_carMovement.SetPowerSpeed);
         _carMovement.SetStartData(_pos.MoveDir, _pos.Dir);
     }
 

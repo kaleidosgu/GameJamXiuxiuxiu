@@ -250,7 +250,8 @@ MonoBehaviour:
   - {fileID: 513566628}
   - {fileID: 1163577443}
   - {fileID: 348502178}
-  SpawnCarTime: 2
+  SpawnCarTime: 1.5
+  chgSpeedMgr: {fileID: 1844636555}
   DebugTest: 0
 --- !u!1 &513566626
 GameObject:
@@ -588,8 +589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2095fde4f84023b48bf4173c3ef12df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyCodeRight: 97
-  KeyCodeLeft: 100
+  KeyCodeRight: 100
+  KeyCodeLeft: 97
   KeycodeCommand: 32
   requestMgr: {fileID: 1726886820}
 --- !u!82 &818173009
@@ -1505,6 +1506,7 @@ MonoBehaviour:
   TimeToExecute: 0.2
   PlayerTrans: {fileID: 818173007}
   SndSpeaker: {fileID: 818173010}
+  ChangeSpeedMgr: {fileID: 1844636555}
 --- !u!4 &1726886821
 Transform:
   m_ObjectHideFlags: 0

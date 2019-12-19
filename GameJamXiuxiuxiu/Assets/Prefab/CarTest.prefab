@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NormalSpeed: 5
-  PowerSpeed: 10
+  PowerSpeed: 20
   TimeOfPowerSpeed: 1
 --- !u!1001 &3950521698346484433
 PrefabInstance:
