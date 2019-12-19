@@ -44,7 +44,25 @@ public class CarMovement : MonoBehaviour
     }
     public void SetPowerSpeed( GlobalDefine.CarMovementDir _carDir)
     {
+        bool bProcess = false;
         if(m_dir == _carDir)
+        {
+            bProcess = true;
+        }
+        else
+        {
+            if ((m_dir == GlobalDefine.CarMovementDir.CarMovementDir_South || m_dir == GlobalDefine.CarMovementDir.CarMovementDir_North)
+                && (_carDir == GlobalDefine.CarMovementDir.CarMovementDir_South || _carDir == GlobalDefine.CarMovementDir.CarMovementDir_North))
+            {
+                bProcess = true;
+            }
+            else if ((m_dir == GlobalDefine.CarMovementDir.CarMovementDir_East || m_dir == GlobalDefine.CarMovementDir.CarMovementDir_West)
+                && (_carDir == GlobalDefine.CarMovementDir.CarMovementDir_East || _carDir == GlobalDefine.CarMovementDir.CarMovementDir_West))
+            {
+                bProcess = true;
+            }
+        }
+        if( bProcess == true )
         {
             m_bPower = true;
             m_fCurSpeed = PowerSpeed;
