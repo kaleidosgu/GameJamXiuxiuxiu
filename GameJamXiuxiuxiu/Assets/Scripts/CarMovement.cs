@@ -54,10 +54,21 @@ public class CarMovement : MonoBehaviour
     private bool m_bPower;
     private float m_fCurSpeed;
     private GlobalDefine.CarMovementDir m_dir;
+    private Collider m_collider;
+    private float m_fColliderHeight;
     // Start is called before the first frame update
     void Start()
     {
         m_fCurSpeed = CarSpeedInf.NormalSpeed;
+    }
+    private void Awake()
+    {
+        m_collider = GetComponent<Collider>();
+        m_fColliderHeight = m_collider.bounds.size.z / 2;
+    }
+    private void OnEnable()
+    {
+        m_collider = GetComponent<Collider>();
     }
     public void SetStartData(Vector3 vecPos,GlobalDefine.CarMovementDir _dir)
     {
@@ -107,42 +118,61 @@ public class CarMovement : MonoBehaviour
             m_fCurTime = 0.0f;
         }
     }
+
+    private void _drawLine(bool bLeft)
+    {
+        float fLineDis = DrawLineDistance;
+        CarCheckInfo.CheckResult _res;
+
+        Vector3 vecPosFrom;
+        if(bLeft == true)
+        {
+            vecPosFrom = transform.TransformPoint(Vector3.forward * m_fColliderHeight);
+        }
+        else
+        {
+            vecPosFrom = transform.TransformPoint(Vector3.forward * -m_fColliderHeight);
+        }
+
+        _res = _checkLineResult(vecPosFrom);
+        RaycastHit[] _rayCastLst = Physics.RaycastAll(vecPosFrom, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
+        if (_rayCastLst.Length > 0)
+        {
+            fLineDis = _rayCastLst[0].distance;
+            if (_res == CarCheckInfo.CheckResult.CheckResult_Safe)
+            {
+                Gizmos.color = CarDebug.CrSafeDistance;
+            }
+            else if (_res == CarCheckInfo.CheckResult.CheckResult_Slow)
+            {
+                Gizmos.color = CarDebug.CrSlowDownDistance;
+            }
+            else
+            {
+                Gizmos.color = CarDebug.CrStopDistance;
+            }
+        }
+        else
+        {
+            Gizmos.color = CarDebug.CrSafeDistance;
+        }
+        Gizmos.DrawLine(vecPosFrom, vecPosFrom + transform.right * fLineDis);
+    }
     private void OnDrawGizmos()
     {
         if( CarDebug.DebugInfo == true )
         {
-            float fLineDis = DrawLineDistance;
-            CarCheckInfo.CheckResult _res = _checkResult();
-            RaycastHit[] _rayCastLst = Physics.RaycastAll(transform.position, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
-            if (_rayCastLst.Length > 0)
-            {
-                fLineDis = _rayCastLst[0].distance;
-                if (_res == CarCheckInfo.CheckResult.CheckResult_Safe)
-                {
-                    Gizmos.color = CarDebug.CrSafeDistance;
-                }
-                else if (_res == CarCheckInfo.CheckResult.CheckResult_Slow)
-                {
-                    Gizmos.color = CarDebug.CrSlowDownDistance;
-                }
-                else
-                {
-                    Gizmos.color = CarDebug.CrStopDistance;
-                }
-            }
-            else
-            {
-                Gizmos.color = CarDebug.CrSafeDistance;
-            }
-            Gizmos.DrawLine(transform.position, transform.position + transform.right * fLineDis);
+            _drawLine(true);
+            _drawLine(false);
         }
     }
 
-    public CarCheckInfo.CheckResult _checkResult()
+    public CarCheckInfo.CheckResult _checkLineResult(Vector3 vecPosFrom)
     {
         CarCheckInfo.CheckResult _res = CarCheckInfo.CheckResult.CheckResult_None;
         float fLineDis = 0.0f;
-        RaycastHit[] _rayCastLst = Physics.RaycastAll(transform.position, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
+        RaycastHit[] _rayCastLst;
+        _rayCastLst = Physics.RaycastAll(vecPosFrom, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
         if (_rayCastLst.Length >  0)
         {
             fLineDis = _rayCastLst[0].distance;
@@ -182,8 +212,14 @@ public class CarMovement : MonoBehaviour
         }
         else
         {
-            CarCheckInfo.CheckResult _res = _checkResult();
-            if(_res == CarCheckInfo.CheckResult.CheckResult_Safe)
+            Vector3 vecPosLeft = transform.TransformPoint(Vector3.forward * m_fColliderHeight);
+            Vector3 vecPosRight = transform.TransformPoint(Vector3.forward * -m_fColliderHeight);
+
+            CarCheckInfo.CheckResult _resLeft = _checkLineResult(vecPosLeft);
+            CarCheckInfo.CheckResult _resRight = _checkLineResult(vecPosRight);
+
+            CarCheckInfo.CheckResult _res = _resLeft > _resRight ? _resLeft : _resRight;
+            if (_res == CarCheckInfo.CheckResult.CheckResult_Safe)
             {
                 m_fCurSpeed = CarSpeedInf.NormalSpeed;
             }
