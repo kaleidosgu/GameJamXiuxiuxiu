@@ -134,7 +134,7 @@ public class CarMovement : MonoBehaviour
             {
                 Gizmos.color = CarDebug.CrSafeDistance;
             }
-            Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(transform.right) * fLineDis);
+            Gizmos.DrawLine(transform.position, transform.position + transform.right * fLineDis);
         }
     }
 
