@@ -48,9 +48,9 @@ MonoBehaviour:
   TimeOfPowerSpeed: 1
   DrawLineDistance: 15
   CarSpeedInf:
-    NormalSpeed: 10
-    SlowSpeed: 5
-    PowerSpeed: 25
+    NormalSpeed: 8
+    SlowSpeed: 3
+    PowerSpeed: 15
   CarDebug:
     CrSafeDistance: {r: 0.13710396, g: 0.745283, b: 0.17528611, a: 1}
     CrSlowDownDistance: {r: 0.9245283, g: 0.8354084, b: 0.17007834, a: 1}
@@ -60,6 +60,7 @@ MonoBehaviour:
     MaxCheckDistance: 25
     DistOfSlowDown: 16
     DistOfStop: 6
+    DiffHeight: 0.5
     LayerMsk:
       serializedVersion: 2
       m_Bits: 256

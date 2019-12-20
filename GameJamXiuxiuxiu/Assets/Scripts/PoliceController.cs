@@ -43,7 +43,7 @@ public class PoliceController : MonoBehaviour
         else if (Input.GetKeyDown(KeycodeCommand) == true)
         {
 
-            //police.transform.Rotate(0, 0, 0);
+            
             currentAnimator.Play("wave", 0, 0f);
            
             //transform.Find("police2").Rotate(0, 0, 0);

@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PoliceController.cs">
     <Files>
       <File FileName="Assets/Scripts/CarMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="15" Column="50" />
-      <File FileName="Assets/Scripts/SoundSpeaker.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SpawnCarMgr.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SpawnPosition.cs" Line="19" Column="1" />
-      <File FileName="Assets/waveAction.cs" Line="15" Column="86" />
-      <File FileName="Assets/idleAction.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" />
+      <File FileName="Assets/Scripts/SoundSpeaker.cs" />
+      <File FileName="Assets/Scripts/SpawnCarMgr.cs" />
+      <File FileName="Assets/Scripts/SpawnPosition.cs" />
+      <File FileName="Assets/waveAction.cs" />
+      <File FileName="Assets/idleAction.cs" />
       <File FileName="Assets/Scripts/PoliceController.cs" Line="46" Column="48" />
-      <File FileName="Assets/Scripts/GlobalDefine.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GlobalDefine.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,17 +23,11 @@
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>            GetComponent &lt;"policeman2"&gt;.transform</Value>
-          <Value>transform.Find("police2").rotation</Value>
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="17487671-f33a-4936-9c4a-1c03ffb46582" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="984a981c-463b-4ee1-95c5-b05e5e8dde8e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Assets/Scripts/PoliceController.cs" relfile="Assets/Scripts/PoliceController.cs" line="46" column="1" />
