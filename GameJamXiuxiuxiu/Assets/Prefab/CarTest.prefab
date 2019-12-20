@@ -48,12 +48,14 @@ MonoBehaviour:
   TimeOfPowerSpeed: 1
   DrawLineDistance: 15
   CarSpeedInf:
-    NormalSpeed: 0
-    PowerSpeed: 0
+    NormalSpeed: 15
+    SlowSpeed: 5
+    PowerSpeed: 25
   CarDebug:
     CrSafeDistance: {r: 0.13710396, g: 0.745283, b: 0.17528611, a: 1}
     CrSlowDownDistance: {r: 0.9245283, g: 0.8354084, b: 0.17007834, a: 1}
     CrStopDistance: {r: 0.8396226, g: 0.31781346, b: 0.2891153, a: 1}
+    DebugInfo: 0
   CheckInfo:
     MaxCheckDistance: 25
     DistOfSlowDown: 16

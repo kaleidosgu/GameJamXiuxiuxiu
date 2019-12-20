@@ -7,6 +7,8 @@ public class CarDebugInfo
     public Color CrSafeDistance;
     public Color CrSlowDownDistance;
     public Color CrStopDistance;
+
+    public bool DebugInfo;
 }
 [System.Serializable]
 public class CarCheckInfo
@@ -29,7 +31,7 @@ public class CarCheckInfo
 public class CarSpeedInfo
 {
     public float NormalSpeed;
-
+    public float SlowSpeed;
     public float PowerSpeed;
 
 }
@@ -107,30 +109,33 @@ public class CarMovement : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        float fLineDis = DrawLineDistance;
-        CarCheckInfo.CheckResult _res = _checkResult();
-        RaycastHit[] _rayCastLst = Physics.RaycastAll(transform.position, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
-        if(_rayCastLst.Length > 0)
+        if( CarDebug.DebugInfo == true )
         {
-            fLineDis = _rayCastLst[0].distance;
-            if(_res == CarCheckInfo.CheckResult.CheckResult_Safe)
+            float fLineDis = DrawLineDistance;
+            CarCheckInfo.CheckResult _res = _checkResult();
+            RaycastHit[] _rayCastLst = Physics.RaycastAll(transform.position, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
+            if (_rayCastLst.Length > 0)
             {
-                Gizmos.color = CarDebug.CrSafeDistance;
-            }
-            else if(_res == CarCheckInfo.CheckResult.CheckResult_Slow)
-            {
-                Gizmos.color = CarDebug.CrSlowDownDistance;
+                fLineDis = _rayCastLst[0].distance;
+                if (_res == CarCheckInfo.CheckResult.CheckResult_Safe)
+                {
+                    Gizmos.color = CarDebug.CrSafeDistance;
+                }
+                else if (_res == CarCheckInfo.CheckResult.CheckResult_Slow)
+                {
+                    Gizmos.color = CarDebug.CrSlowDownDistance;
+                }
+                else
+                {
+                    Gizmos.color = CarDebug.CrStopDistance;
+                }
             }
             else
             {
-                Gizmos.color = CarDebug.CrStopDistance;
+                Gizmos.color = CarDebug.CrSafeDistance;
             }
+            Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(transform.right) * fLineDis);
         }
-        else
-        {
-            Gizmos.color = CarDebug.CrSafeDistance;
-        }
-        Gizmos.DrawLine(transform.position, transform.position + transform.TransformDirection(transform.right) * fLineDis);
     }
 
     public CarCheckInfo.CheckResult _checkResult()
@@ -138,7 +143,7 @@ public class CarMovement : MonoBehaviour
         CarCheckInfo.CheckResult _res = CarCheckInfo.CheckResult.CheckResult_None;
         float fLineDis = 0.0f;
         RaycastHit[] _rayCastLst = Physics.RaycastAll(transform.position, transform.right, CheckInfo.MaxCheckDistance, CheckInfo.LayerMsk);
-        if (_rayCastLst.Length > 0)
+        if (_rayCastLst.Length >  0)
         {
             fLineDis = _rayCastLst[0].distance;
             if (fLineDis > CheckInfo.DistOfSlowDown)
@@ -177,7 +182,19 @@ public class CarMovement : MonoBehaviour
         }
         else
         {
-
+            CarCheckInfo.CheckResult _res = _checkResult();
+            if(_res == CarCheckInfo.CheckResult.CheckResult_Safe)
+            {
+                m_fCurSpeed = CarSpeedInf.NormalSpeed;
+            }
+            else if (_res == CarCheckInfo.CheckResult.CheckResult_Slow)
+            {
+                m_fCurSpeed = CarSpeedInf.SlowSpeed;
+            }
+            else if (_res == CarCheckInfo.CheckResult.CheckResult_Stop)
+            {
+                m_fCurSpeed = 0;
+            }
         }
         if(m_dir == GlobalDefine.CarMovementDir.CarMovementDir_West)
         {
