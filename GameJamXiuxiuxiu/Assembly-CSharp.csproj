@@ -79,8 +79,14 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -99,12 +105,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder">
-      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>G:/Tools/Unity_2019_26/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

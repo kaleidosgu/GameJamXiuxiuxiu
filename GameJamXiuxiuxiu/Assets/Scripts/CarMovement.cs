@@ -1,7 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
+public class CarDebugInfo
+{
+    public Color CrSafeDistance;
+    public Color CrSlowDownDistance;
+    public Color CrStopDistance;
+}
+[System.Serializable]
+public class CarCheckInfo
+{
+    public float DistOfSlowDown;
+    public float DistOfStop;
+}
 public class CarMovement : MonoBehaviour
 {
     public float NormalSpeed;
@@ -9,11 +21,17 @@ public class CarMovement : MonoBehaviour
     public float PowerSpeed;
 
     public float TimeOfPowerSpeed;
+    public float DrawLineDistance;
+
+
+    [Space]
+    [Space]
+    [Space]
+
+    public CarDebugInfo CarDebug;
 
     private float m_fCurTime;
-
     private bool m_bPower;
-
     private float m_fCurSpeed;
     private GlobalDefine.CarMovementDir m_dir;
     // Start is called before the first frame update
@@ -69,7 +87,11 @@ public class CarMovement : MonoBehaviour
             m_fCurTime = 0.0f;
         }
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.right * DrawLineDistance);
+    }
     private void FixedUpdate()
     {
         if(m_bPower == true)

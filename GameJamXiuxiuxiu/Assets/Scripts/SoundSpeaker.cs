@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SoundSpeaker : MonoBehaviour
 {
-    public AudioSource xiuSource;
+    private AudioSource[] m_lstSwishSound;
+    private int m_nLstCounts;
     // Start is called before the first frame update
     void Start()
     {
-        xiuSource = GetComponent<AudioSource>();
+        m_lstSwishSound = GetComponents<AudioSource>();
+        m_nLstCounts = m_lstSwishSound.Length;
     }
 
     // Update is called once per frame
@@ -18,6 +20,7 @@ public class SoundSpeaker : MonoBehaviour
     }
     public void PlayClip()
     {
-        xiuSource.Play();
+        int nIdx = Random.Range(0, m_nLstCounts);
+        m_lstSwishSound[nIdx].Play();
     }
 }
