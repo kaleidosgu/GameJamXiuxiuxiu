@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3950521698252636865}
   - component: {fileID: 3950521698252636870}
-  m_Layer: 0
+  - component: {fileID: 6280371993139138662}
+  m_Layer: 8
   m_Name: CarTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3950521698252636864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19999999, y: 20.79, z: 18.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8334375393376332235}
@@ -44,7 +45,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9aa76af9e4d9f458d20877c54b9153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalSpeed: 5
+  TimeOfPowerSpeed: 1
+  DrawLineDistance: 15
+  CarSpeedInf:
+    NormalSpeed: 10
+    SlowSpeed: 5
+    PowerSpeed: 25
+  CarDebug:
+    CrSafeDistance: {r: 0.13710396, g: 0.745283, b: 0.17528611, a: 1}
+    CrSlowDownDistance: {r: 0.9245283, g: 0.8354084, b: 0.17007834, a: 1}
+    CrStopDistance: {r: 0.8396226, g: 0.31781346, b: 0.2891153, a: 1}
+    DebugInfo: 1
+  CheckInfo:
+    MaxCheckDistance: 25
+    DistOfSlowDown: 16
+    DistOfStop: 6
+    LayerMsk:
+      serializedVersion: 2
+      m_Bits: 256
+--- !u!65 &6280371993139138662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3950521698252636864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 1.5, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3950521698346484433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,17 +91,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 671e39cee7ea9db4d84327c1671b4b83,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 671e39cee7ea9db4d84327c1671b4b83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 671e39cee7ea9db4d84327c1671b4b83,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.39
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 671e39cee7ea9db4d84327c1671b4b83,
         type: 3}

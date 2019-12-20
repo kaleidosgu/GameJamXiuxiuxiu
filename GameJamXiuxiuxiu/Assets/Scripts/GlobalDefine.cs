@@ -12,5 +12,10 @@ public class GlobalDefine
         CarMovementDir_East = 3,
         CarMovementDir_West = 4,
     }
-    //public enum 
+    [System.Serializable]
+    public enum PlayerDir
+    {
+        PlayerDir_Right = 1,
+        PlayerDir_Left = 2,
+    }
 }

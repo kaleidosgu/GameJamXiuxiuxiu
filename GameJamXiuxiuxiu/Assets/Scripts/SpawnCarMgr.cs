@@ -8,26 +8,48 @@ public class SpawnCarMgr : MonoBehaviour
 
     public SpawnPosition[] ArraySpawnPos;
 
+    public float SpawnCarTime;
+
+    public ChangeSpeedMgr chgSpeedMgr;
+
     public bool DebugTest;
+    private float m_fCurSpawnCarTime;
+    private int m_nCntLst;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_nCntLst = ArraySpawnPos.Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(DebugTest == true)
+        if (DebugTest == true)
         {
             DebugTest = false;
-            int nRandom = Random.Range(0, 4);
-            SpawnPosition _pos = ArraySpawnPos[nRandom];
-            GameObject _objCar = Instantiate(PrefabCar, Vector3.zero, Quaternion.identity);
-            _objCar.transform.SetParent(_pos.transform);
-            _objCar.transform.localPosition = Vector3.zero;
-            CarMovement _carMovement = _objCar.GetComponent<CarMovement>();
-            _carMovement.SetStartData(_pos.MoveDir, _pos.Dir);
+            _generate();
+        }
+    }
+
+    private void _generate()
+    {
+        int nRandom = Random.Range(0, m_nCntLst);
+        SpawnPosition _pos = ArraySpawnPos[nRandom];
+        GameObject _objCar = Instantiate(PrefabCar, Vector3.zero, Quaternion.identity);
+        _objCar.transform.SetParent(_pos.transform);
+        _objCar.transform.localPosition = Vector3.zero;
+        CarMovement _carMovement = _objCar.GetComponent<CarMovement>();
+        chgSpeedMgr.RegisteCar(_carMovement.SetPowerSpeed);
+        _carMovement.SetStartData(_pos.MoveDir, _pos.Dir);
+    }
+
+    private void FixedUpdate()
+    {
+        m_fCurSpawnCarTime += Time.fixedDeltaTime;
+        if(m_fCurSpawnCarTime >= SpawnCarTime)
+        {
+            m_fCurSpawnCarTime -= SpawnCarTime;
+            _generate();
         }
     }
 }

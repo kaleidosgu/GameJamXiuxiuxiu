@@ -65,9 +65,16 @@
   <ItemGroup>
     <Compile Include="Assets\idleAction.cs" />
     <Compile Include="Assets\Scripts\CarMovement.cs" />
+    <Compile Include="Assets\Scripts\ChangeSpeedMgr.cs" />
     <Compile Include="Assets\Scripts\GlobalDefine.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\PoliceController.cs" />
+=======
+    <Compile Include="Assets\Scripts\RequestCommand.cs" />
+    <Compile Include="Assets\Scripts\RequestCommandMgr.cs" />
+    <Compile Include="Assets\Scripts\RhythmController.cs" />
+>>>>>>> refs/remotes/origin/master
     <Compile Include="Assets\Scripts\SoundSpeaker.cs" />
     <Compile Include="Assets\Scripts\SpawnCarMgr.cs" />
     <Compile Include="Assets\Scripts\SpawnPosition.cs" />
@@ -81,11 +88,17 @@
     <Reference Include="Unity.Recorder.Editor">
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -103,7 +116,11 @@
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
+<<<<<<< HEAD
       <HintPath>/Users/wanhongbo/gamejam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+=======
+      <HintPath>G:/GameDev/GitHub/GameJam/GameJamXiuxiuxiu/GameJamXiuxiuxiu/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+>>>>>>> refs/remotes/origin/master
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
