@@ -249,7 +249,11 @@ MonoBehaviour:
   - {fileID: 1763068541}
   - {fileID: 513566628}
   - {fileID: 1163577443}
-  SpawnCarTime: 0.5
+  NorthPos: {fileID: 1763068541}
+  SouthPos: {fileID: 513566628}
+  EastPos: {fileID: 348502178}
+  WestPos: {fileID: 1163577443}
+  SpawnCarTime: 1
   chgSpeedMgr: {fileID: 1844636555}
   DebugTest: 0
 --- !u!1 &513566626
