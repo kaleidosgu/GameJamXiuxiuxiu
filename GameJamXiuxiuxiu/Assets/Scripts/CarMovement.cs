@@ -32,6 +32,7 @@ public class CarSpeedInfo
 {
     public float NormalSpeed;
     public float SlowSpeed;
+	public float StopSpeed;
     public float PowerSpeed;
 
 }
@@ -229,7 +230,7 @@ public class CarMovement : MonoBehaviour
             }
             else if (_res == CarCheckInfo.CheckResult.CheckResult_Stop)
             {
-                m_fCurSpeed = 0;
+                m_fCurSpeed = CarSpeedInf.StopSpeed;
             }
         }
         if(m_dir == GlobalDefine.CarMovementDir.CarMovementDir_West)
