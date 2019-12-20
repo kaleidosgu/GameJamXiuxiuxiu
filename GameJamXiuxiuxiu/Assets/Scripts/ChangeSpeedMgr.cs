@@ -17,6 +17,9 @@ public class ChangeSpeedMgr : MonoBehaviour
     }
     public void ExecuteSpeed(GlobalDefine.CarMovementDir _carDir)
     {
-        m_actChangeSpeed.Invoke(_carDir);
+        if(m_actChangeSpeed != null)
+        {
+            m_actChangeSpeed.Invoke(_carDir);
+        }
     }
 }
