@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode KeycodeCommand;
     public RequestCommandMgr requestMgr;
 
+    public Animator currentAnimator;
 
     private List<DirSets> m_lstDirSets;
 
@@ -71,6 +72,10 @@ public class PlayerController : MonoBehaviour
         }
         _changeSelfDir(_dir);
     }
+	public void PlayWaveAni()
+	{
+		currentAnimator.Play("wave", 0, 0f);
+	}
     private void _changeSelfDir(GlobalDefine.PlayerDir _dir)
     {
         foreach(DirSets _set in m_lstDirSets)

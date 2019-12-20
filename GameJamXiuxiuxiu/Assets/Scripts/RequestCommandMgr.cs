@@ -5,7 +5,7 @@ using UnityEngine;
 public class RequestCommandMgr : MonoBehaviour
 {
     public float TimeToExecute;
-    public Transform PlayerTrans;
+    public PlayerController PlayerCtrl;
     public SoundSpeaker SndSpeaker;
     public ChangeSpeedMgr ChangeSpeedMgr;
     public int CountsOfLst;
@@ -37,7 +37,7 @@ public class RequestCommandMgr : MonoBehaviour
             if ( m_lstCommand[0].GetCmdTyp() == RequestCommand.RequestCommand_Type.RequestCommand_Type_ChangePlayerDir )
             {
                 RequestChangePlayerDir _changeDir = (RequestChangePlayerDir)m_lstCommand[0];
-                _changeDir.ExecuteCmd(PlayerTrans);
+                _changeDir.ExecuteCmd(PlayerCtrl.transform);
             }
             else if (m_lstCommand[0].GetCmdTyp() == RequestCommand.RequestCommand_Type.RequestCommand_Type_ChangeSpeed)
             {
@@ -60,6 +60,7 @@ public class RequestCommandMgr : MonoBehaviour
             }
             m_lstCommand.RemoveAt(0);
             SndSpeaker.PlayClip();
+			PlayerCtrl.PlayWaveAni();
         }
     }
 
