@@ -48,7 +48,7 @@ MonoBehaviour:
   TimeOfPowerSpeed: 1
   DrawLineDistance: 15
   CarSpeedInf:
-    NormalSpeed: 15
+    NormalSpeed: 10
     SlowSpeed: 5
     PowerSpeed: 25
   CarDebug:

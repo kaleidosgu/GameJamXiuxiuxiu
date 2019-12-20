@@ -9,6 +9,7 @@ public class RequestCommandMgr : MonoBehaviour
     public SoundSpeaker SndSpeaker;
     public ChangeSpeedMgr ChangeSpeedMgr;
     public int CountsOfLst;
+    public bool ExecuteWestAndEast;
 
     private float m_fCurrentTimeToExecute;
     private List<RequestCommand> m_lstCommand;
@@ -41,7 +42,17 @@ public class RequestCommandMgr : MonoBehaviour
             else if (m_lstCommand[0].GetCmdTyp() == RequestCommand.RequestCommand_Type.RequestCommand_Type_ChangeSpeed)
             {
                 RequestChangeSpeed _changeSpeed = (RequestChangeSpeed)m_lstCommand[0];
-                ChangeSpeedMgr.ExecuteSpeed(_changeSpeed.GetCarDir());
+                if(_changeSpeed.GetCarDir() == GlobalDefine.CarMovementDir.CarMovementDir_East || _changeSpeed.GetCarDir() == GlobalDefine.CarMovementDir.CarMovementDir_West)
+                {
+                    if( ExecuteWestAndEast == true )
+                    {
+                        ChangeSpeedMgr.ExecuteSpeed(_changeSpeed.GetCarDir());
+                    }
+                }
+                else
+                {
+                    ChangeSpeedMgr.ExecuteSpeed(_changeSpeed.GetCarDir());
+                }
             }
             else
             {
