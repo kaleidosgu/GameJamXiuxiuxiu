@@ -8,6 +8,7 @@ public class RequestCommandMgr : MonoBehaviour
     public Transform PlayerTrans;
     public SoundSpeaker SndSpeaker;
     public ChangeSpeedMgr ChangeSpeedMgr;
+    public int CountsOfLst;
 
     private float m_fCurrentTimeToExecute;
     private List<RequestCommand> m_lstCommand;
@@ -53,6 +54,14 @@ public class RequestCommandMgr : MonoBehaviour
 
     public void AddCommand(RequestCommand _cmd)
     {
-        m_lstCommand.Add( _cmd );
+        int nCounts = m_lstCommand.Count;
+        if(nCounts < CountsOfLst )
+        {
+        }
+        else
+        {
+            m_lstCommand.RemoveAt(nCounts - 1);
+        }
+        m_lstCommand.Add(_cmd);
     }
 }

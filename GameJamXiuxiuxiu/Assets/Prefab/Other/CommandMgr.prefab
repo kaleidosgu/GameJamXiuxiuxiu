@@ -48,6 +48,7 @@ MonoBehaviour:
   PlayerTrans: {fileID: 0}
   SndSpeaker: {fileID: 0}
   ChangeSpeedMgr: {fileID: 6546063039954884854}
+  CountsOfLst: 1
 --- !u!1 &6546063039954884852
 GameObject:
   m_ObjectHideFlags: 0
