@@ -57,6 +57,7 @@ public class CarMovement : MonoBehaviour
     public GlobalDefine.CarMovementDir m_dir;
     private Collider m_collider;
     private float m_fColliderHeight;
+    private ChangeSpeedMgr m_mgr;
     // Start is called before the first frame update
     void Start()
     {
@@ -255,6 +256,25 @@ public class CarMovement : MonoBehaviour
 		if (other.gameObject.CompareTag("TagCar"))
 		{
 			Debug.Log("Crash");
+            CrashEvent _evt = FindObjectOfType<CrashEvent>();
+            if(_evt != null)
+            {
+                _evt.CrashHappened();
+            }
 		}
 	}
+
+    public void Registe(ChangeSpeedMgr _mgr)
+    {
+        _mgr.RegisteCar(SetPowerSpeed);
+        m_mgr = _mgr;
+    }
+
+    private void OnDestroy()
+    {
+        if(m_mgr != null)
+        {
+            m_mgr.UnregisteCar(SetPowerSpeed);
+        }
+    }
 }

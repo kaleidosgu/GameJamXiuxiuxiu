@@ -71,7 +71,7 @@ public class SpawnCarMgr : MonoBehaviour
         _objCar.transform.SetParent(_pos.transform);
         _objCar.transform.localPosition = Vector3.zero;
         CarMovement _carMovement = _objCar.GetComponent<CarMovement>();
-        chgSpeedMgr.RegisteCar(_carMovement.SetPowerSpeed);
+        _carMovement.Registe(chgSpeedMgr);
         _carMovement.SetStartData(_pos.MoveDir, _pos.Dir);
     }
 
