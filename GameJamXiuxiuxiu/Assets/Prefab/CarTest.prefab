@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3950521698252636865}
   - component: {fileID: 3950521698252636870}
   - component: {fileID: 6280371993139138662}
+  - component: {fileID: 5799442488040229198}
   m_Layer: 8
   m_Name: CarTest
-  m_TagString: Untagged
+  m_TagString: TagCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,7 @@ MonoBehaviour:
   CarSpeedInf:
     NormalSpeed: 8
     SlowSpeed: 3
+    StopSpeed: 0
     PowerSpeed: 15
   CarDebug:
     CrSafeDistance: {r: 0.13710396, g: 0.745283, b: 0.17528611, a: 1}
@@ -64,6 +66,7 @@ MonoBehaviour:
     LayerMsk:
       serializedVersion: 2
       m_Bits: 256
+  m_dir: 0
 --- !u!65 &6280371993139138662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77,6 +80,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1.5, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5799442488040229198
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3950521698252636864}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &3950521698346484433
 PrefabInstance:
   m_ObjectHideFlags: 0

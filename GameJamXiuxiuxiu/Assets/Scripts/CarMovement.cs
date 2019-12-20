@@ -250,4 +250,11 @@ public class CarMovement : MonoBehaviour
             transform.Translate(-transform.forward * Time.fixedDeltaTime * m_fCurSpeed);
         }
     }
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("TagCar"))
+		{
+			Debug.Log("Crash");
+		}
+	}
 }
