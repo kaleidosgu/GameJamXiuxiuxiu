@@ -14,10 +14,11 @@ public class SpawnCarMgr : MonoBehaviour
 
     public bool DebugTest;
     private float m_fCurSpawnCarTime;
+    private int m_nCntLst;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_nCntLst = ArraySpawnPos.Length;
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class SpawnCarMgr : MonoBehaviour
 
     private void _generate()
     {
-        int nRandom = Random.Range(0, 4);
+        int nRandom = Random.Range(0, m_nCntLst);
         SpawnPosition _pos = ArraySpawnPos[nRandom];
         GameObject _objCar = Instantiate(PrefabCar, Vector3.zero, Quaternion.identity);
         _objCar.transform.SetParent(_pos.transform);
