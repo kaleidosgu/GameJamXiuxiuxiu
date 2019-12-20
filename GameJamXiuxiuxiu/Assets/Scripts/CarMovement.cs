@@ -24,7 +24,7 @@ public class CarCheckInfo
 
     public float DistOfSlowDown;
     public float DistOfStop;
-
+	public float DiffHeight;
     public LayerMask LayerMsk;
 }
 [System.Serializable]
@@ -53,7 +53,7 @@ public class CarMovement : MonoBehaviour
     private float m_fCurTime;
     private bool m_bPower;
     private float m_fCurSpeed;
-    private GlobalDefine.CarMovementDir m_dir;
+    public GlobalDefine.CarMovementDir m_dir;
     private Collider m_collider;
     private float m_fColliderHeight;
     // Start is called before the first frame update
@@ -64,7 +64,7 @@ public class CarMovement : MonoBehaviour
     private void Awake()
     {
         m_collider = GetComponent<Collider>();
-        m_fColliderHeight = m_collider.bounds.size.z / 2;
+        m_fColliderHeight = m_collider.bounds.size.z / 2 - CheckInfo.DiffHeight;
     }
     private void OnEnable()
     {
